@@ -1,0 +1,79 @@
+/* STAFF Specifics */
+
+// Actions
+.actions {
+  margin-bottom: 1em;
+}
+
+// Lists
+.list { //[table]
+  border-collapse: collapse;
+  vertical-align: top;
+  width: 100%;
+  tr {
+    th {
+      border: 1px solid #0055DD;
+      background: #0055DD;
+      color: $white;
+      text-align: center;
+    } //th
+    td {
+      border: 1px solid #999999;
+      text-align: center;
+    } //td
+  } //tr
+} //.list [table]
+
+/* Forms */
+form {
+  display: block;
+}
+dl {
+  clear: both;
+  overflow: hidden;
+  margin: 0.5em 0px;
+}
+dt {
+  float: left;
+  font-weight: bold;
+  width: 125px;
+}
+#operations {
+  clear: both;
+  margin: 1em 0px 1em 75px;
+}
+
+/* Errors */
+.errors {
+  display: inline-block;
+  border: 2px solid $red;
+  color: $olive;
+  padding: 1em;
+  margin-bottom: 1em;
+  ul {
+    margin-bottom: 0px;
+    padding-left: 1em;
+  } //ul
+} //.errors
+
+
+/* MAIN CONTENT  */
+.main-content {
+  .page-metadata {
+    display: inline-block;
+    margin-bottom: 1em;
+    border: 2px solid $maroon;
+    margin-top: 1em !important;
+    padding: 0.5em;
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-weight: $normal;
+    color: $purple;
+  }
+}
+
+
+
+
+
+
