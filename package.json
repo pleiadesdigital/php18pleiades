@@ -1,17 +1,19 @@
 {
-  "name": "PHP Pleiades Moon",
+  "name": "pleiadesmoon",
   "version": "1.0.0",
-  "description": "Training PHP with Kevin Skougland",
+  "description": "PHP training 18",
   "main": "index.php",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pleiadesdigital/sunsettheme.git"
+    "url": "git+https://github.com/pleiadesdigital/php18pleiades.git"
   },
   "keywords": [
-    "pleiadesmoon"
+    "php",
+    "cms"
   ],
   "author": "Ronaldo Ortiz",
   "license": "ISC",
+  "homepage": "https://github.com/pleiadesdigital/php18pleiades#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",

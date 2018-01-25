@@ -23,13 +23,13 @@ Author: Ronaldo Ortiz
 @import "breakpoint";
 
 // Variables
-@import "base/variables";
+@import "mixins";
 
 
 /*--------------------------------------------------------------
 ALL STYLES
 --------------------------------------------------------------*/
-@import "mixins";
+
 @import "main";
 @import "staff";
 

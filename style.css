@@ -1,0 +1,281 @@
+/*!
+Project: PHP Essential Training [CMS]
+Author: Ronaldo Ortiz
+*/
+/*--------------------------------------------------------------
+0. Compass Imports & External
+--------------------------------------------------------------*/
+/* line 5, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* COLORS */
+/* FONTS */
+/* WEIGHTS */
+/*--------------------------------------------------------------
+ALL STYLES
+--------------------------------------------------------------*/
+/* line 1, ../../sass/_main.scss */
+html {
+  height: 100%;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 8, ../../sass/_main.scss */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* line 15, ../../sass/_main.scss */
+body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Encode Sans Condensed", sans-serif;
+  background-color: #fafafa;
+}
+
+/* HEADINGS */
+/* line 25, ../../sass/_main.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+}
+
+/* line 29, ../../sass/_main.scss */
+p, ul, ol, li, input, textarea, button {
+  font-family: "Encode Sans Condensed", sans-serif;
+}
+
+/* SITE-WRAPPER */
+/* line 33, ../../sass/_main.scss */
+.site-wrapper {
+  width: 1000px;
+  margin: 0px auto;
+}
+
+/* HEADER */
+/* line 39, ../../sass/_main.scss */
+header {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+  background: #060928;
+  background-image: url("../images/misc/back-header.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  color: #e6e6e6;
+  /* SITE BRANDING */
+  /* NAVIGATION */
+}
+/* line 53, ../../sass/_main.scss */
+header .site-branding {
+  padding: 2em 1em;
+}
+/* line 55, ../../sass/_main.scss */
+header .site-branding h1 {
+  margin: 0px;
+  font-size: 20px;
+  text-align: center;
+}
+/* line 64, ../../sass/_main.scss */
+header .main-nav {
+  width: 100%;
+  background-color: rgba(242, 242, 242, 0.3);
+  margin: 0px;
+  padding: 1em;
+  text-align: center;
+}
+/* line 70, ../../sass/_main.scss */
+header .main-nav ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+/* line 74, ../../sass/_main.scss */
+header .main-nav ul li {
+  display: inline;
+  margin-right: 1em;
+}
+
+/* MAIN CONTENT */
+/* line 84, ../../sass/_main.scss */
+.main-content {
+  display: block;
+  width: 100%;
+  min-height: 400px;
+  padding: 2em 30px;
+  background-color: #FFFFFF;
+}
+/* line 90, ../../sass/_main.scss */
+.main-content h1 {
+  margin: 1em 0px;
+  font-size: 24px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* FOOTER */
+/* line 101, ../../sass/_main.scss */
+footer {
+  display: block;
+  width: 100%;
+  margin: 0px 0px 10px 0px;
+  background: #1b1019;
+  padding: 10px 20px;
+  color: #f2f2f2;
+}
+
+/* STAFF Specifics */
+/* line 4, ../../sass/_staff.scss */
+.actions {
+  margin-bottom: 1em;
+}
+
+/* line 9, ../../sass/_staff.scss */
+.list {
+  border-collapse: collapse;
+  vertical-align: top;
+  width: 100%;
+}
+/* line 14, ../../sass/_staff.scss */
+.list tr th {
+  border: 1px solid #0055DD;
+  background: #0055DD;
+  color: #FFFFFF;
+  text-align: center;
+}
+/* line 20, ../../sass/_staff.scss */
+.list tr td {
+  border: 1px solid #999999;
+  text-align: center;
+}
+
+/* Forms */
+/* line 28, ../../sass/_staff.scss */
+form {
+  display: block;
+}
+
+/* line 31, ../../sass/_staff.scss */
+dl {
+  clear: both;
+  overflow: hidden;
+  margin: 0.5em 0px;
+}
+
+/* line 36, ../../sass/_staff.scss */
+dt {
+  float: left;
+  font-weight: bold;
+  width: 125px;
+}
+
+/* line 41, ../../sass/_staff.scss */
+#operations {
+  clear: both;
+  margin: 1em 0px 1em 75px;
+}
+
+/* Errors */
+/* line 47, ../../sass/_staff.scss */
+.errors {
+  display: inline-block;
+  border: 2px solid #990033;
+  color: #A58F3A;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+/* line 53, ../../sass/_staff.scss */
+.errors ul {
+  margin-bottom: 0px;
+  padding-left: 1em;
+}
+
+/* MAIN CONTENT  */
+/* line 62, ../../sass/_staff.scss */
+.main-content .page-metadata {
+  display: inline-block;
+  margin-bottom: 1em;
+  border: 2px solid #59001e;
+  margin-top: 1em !important;
+  padding: 0.5em;
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #1b1019;
+}
+
+/*# sourceMappingURL=style.css.map */

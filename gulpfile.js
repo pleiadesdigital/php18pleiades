@@ -41,8 +41,5 @@ gulp.task('watch', function(){
 	gulp.watch(['sass/*.scss', 'sass/*/*.scss'], ['compass']);
 });
 
-
 //DEFAULT
 gulp.task('default', ['watch', 'compass']);
-
-
