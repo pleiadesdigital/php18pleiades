@@ -246,11 +246,16 @@ dt {
 /* line 41, ../../sass/_staff.scss */
 #operations {
   clear: both;
-  margin: 1em 0px 1em 75px;
+  margin: 0px;
+}
+/* line 44, ../../sass/_staff.scss */
+#operations input {
+  padding: 1em;
+  cursor: pointer;
 }
 
 /* Errors */
-/* line 47, ../../sass/_staff.scss */
+/* line 51, ../../sass/_staff.scss */
 .errors {
   display: inline-block;
   border: 2px solid #990033;
@@ -258,14 +263,14 @@ dt {
   padding: 1em;
   margin-bottom: 1em;
 }
-/* line 53, ../../sass/_staff.scss */
+/* line 57, ../../sass/_staff.scss */
 .errors ul {
   margin-bottom: 0px;
   padding-left: 1em;
 }
 
 /* MAIN CONTENT  */
-/* line 62, ../../sass/_staff.scss */
+/* line 66, ../../sass/_staff.scss */
 .main-content .page-metadata {
   display: inline-block;
   margin-bottom: 1em;

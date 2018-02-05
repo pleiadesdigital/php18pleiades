@@ -40,7 +40,11 @@ dt {
 }
 #operations {
   clear: both;
-  margin: 1em 0px 1em 75px;
+  margin: 0px;
+  input {
+    padding: 1em;
+    cursor: pointer;
+  }
 }
 
 /* Errors */

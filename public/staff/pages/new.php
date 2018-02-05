@@ -1,39 +1,48 @@
 <?php require_once('../../../private/initialize.php'); ?>
 <?php
 $id = $_GET['id'] ?? '1';
-$menu_name = '';
+$subject_id = $_GET['subject_id'];
+$page_name = '';
 $position = '';
 $visible = '';
 
 // check submit method
 if (is_post_request($_POST)) {
 	// Handle form values sent by new.phpr4
-	$menu_name = $_POST['menu_name'] ?? '';
+	$page_name = $_POST['page_name'] ?? '';
+	$subject_id = $_POST['subject_id'] ?? '';
 	$position = $_POST['position'] ?? '';
 	$visible = $_POST['visible'] ?? '';
 	echo "<h2>Form parameters</h2>";
-	echo "Subject ID: " . $id . "<br>";
-	echo "Menu name: " . $menu_name . "<br>";
+	echo "Page ID: " . $id . "<br>";
+	echo "Subject ID: " . $subject_id . "<br>";
+	echo "Page name: " . $page_name . "<br>";
 	echo "Position: " . $position . "<br>";
 	echo "Visible: " . $visible . "<br>";
 }
 ?>
 
 
+
 <!-- MAIN CONTENT -->
-<?php $page_title = 'New Subject'; ?>
+<?php $page_title = 'New Page'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 	<section class="main-content">
 		<div class="content-header">
-		  <a class="back-link" href="<?php echo url_for('/staff/subjects/index.php') ?>">&laquo; Back to List</a>
+		  <a class="back-link" href="<?php echo url_for('/staff/pages/index.php') ?>">&laquo; Back to List</a>
 		</div><!-- class="content-header" -->
-		<div id="subject new">
-			<h1>Create Subjects</h1>
-			<form action="<?php echo url_for('/staff/subjects/new.php'); ?>" method="post">
+		<div id="page new">
+			<h1>Create Pages</h1>
+			<form action="<?php echo url_for('/staff/pages/new.php'); ?>" method="post">
 
 				<dl>
-					<dt>Menu Name</dt>
-					<dd><input type="text" name="menu_name" value="<?php echo h($menu_name); ?>"></dd>
+					<dt>Page Name</dt>
+					<dd><input type="text" name="page_name" value="<?php echo h($page_name); ?>"></dd>
+				</dl>
+
+				<dl>
+					<dt>Subject ID</dt>
+					<dd><input type="text" name="subject_id" value="<?php echo h($subject_id); ?>"></dd>
 				</dl>
 
 				<dl>
@@ -56,7 +65,7 @@ if (is_post_request($_POST)) {
 				</dl>
 
 				<div id="operations">
-					<input type="submit" value="Create Subject" />
+					<input type="submit" value="Create Page" />
 				</div>
 
 			</form>

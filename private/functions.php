@@ -43,3 +43,14 @@ function redirect_to($location) {
 	exit();
 }
 
+// CHECK IF SUBMIT FORM IS POST REQUEST
+function is_post_request() {
+	return $_SERVER['REQUEST_METHOD'] == 'POST';
+}
+
+// CHECK IF SUBMIT FORM IS GET REQUEST
+function is_get_request() {
+	return $_SERVER['REQUEST_METHOD'] == 'GET';
+}
+
+

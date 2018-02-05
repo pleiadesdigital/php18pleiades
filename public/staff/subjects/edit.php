@@ -1,9 +1,13 @@
 <?php require_once('../../../private/initialize.php'); ?>
 <?php
+if (!isset($_GET['id'])) {
+	redirect_to('staff/subjects/index.php');
+}
 $id = $_GET['id'] ?? '1';
 $menu_name = '';
 $position = '';
 $visible = '';
+
 
 // check submit method
 if (is_post_request($_POST)) {
@@ -11,7 +15,7 @@ if (is_post_request($_POST)) {
 	$menu_name = $_POST['menu_name'] ?? '';
 	$position = $_POST['position'] ?? '';
 	$visible = $_POST['visible'] ?? '';
-	echo "<h2>Form parameters</h2>";
+	echo "Form parameters<br>";
 	echo "Subject ID: " . $id . "<br>";
 	echo "Menu name: " . $menu_name . "<br>";
 	echo "Position: " . $position . "<br>";
@@ -19,17 +23,17 @@ if (is_post_request($_POST)) {
 }
 ?>
 
-
 <!-- MAIN CONTENT -->
-<?php $page_title = 'New Subject'; ?>
+<?php $page_title = 'Edit Subject'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 	<section class="main-content">
 		<div class="content-header">
-		  <a class="back-link" href="<?php echo url_for('/staff/subjects/index.php') ?>">&laquo; Back to List</a>
+		  <a class="back-link" href="<?php echo url_for('/staff/subjects/index.php'); ?>">&laquo; Back to List</a>
 		</div><!-- class="content-header" -->
-		<div id="subject new">
-			<h1>Create Subjects</h1>
-			<form action="<?php echo url_for('/staff/subjects/new.php'); ?>" method="post">
+
+		<div id="subject edit">
+			<h1>Edit Subjects</h1>
+			<form action="<?php echo url_for('/staff/subjects/edit.php?id=' . h(u($id))); ?>" method="post">
 
 				<dl>
 					<dt>Menu Name</dt>
@@ -56,7 +60,7 @@ if (is_post_request($_POST)) {
 				</dl>
 
 				<div id="operations">
-					<input type="submit" value="Create Subject" />
+					<input type="submit" value="Edit Subject" />
 				</div>
 
 			</form>
