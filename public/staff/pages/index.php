@@ -1,13 +1,8 @@
 <?php require_once('../../../private/initialize.php'); ?>
 
 <?php
-	$pages = array(
-		['id' => '1', 'subject_id' => '1', 'position' => '1', 'visible' => '1', 'menu_name' => 'Mission'],
-		['id' => '2', 'subject_id' => '1', 'position' => '2', 'visible' => '1', 'menu_name' => 'Our Team'],
-		['id' => '3', 'subject_id' => '2', 'position' => '1', 'visible' => '1', 'menu_name' => 'Credit Cards'],
-		['id' => '4', 'subject_id' => '2', 'position' => '2', 'visible' => '1', 'menu_name' => 'Loans'],
-	);
 
+	$page_set = find_all_pages();
 
 
 ?>
@@ -33,7 +28,8 @@
 					<th>&nbsp;</th>
 					<th>&nbsp;</th>
 				</tr>
-				<?php foreach ($pages as $page) { ?>
+				<?php while ($page = mysqli_fetch_assoc($page_set)) { ?>
+				<?php //foreach ($page_set as $page) { ?>
 					<tr>
 						<td><?php echo h($page['id']); ?></td>
 						<td><?php echo h($page['subject_id']); ?></td>
@@ -46,7 +42,7 @@
 					</tr>
 				<?php } ?>
 			</table>
-
+			<?php mysqli_free_result($page_set); ?>
 		</div>
 
 
