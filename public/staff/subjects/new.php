@@ -7,15 +7,20 @@ $visible = '';
 
 // check submit method
 if (is_post_request($_POST)) {
-	// Handle form values sent by new.phpr4
+	// Handle form values sent by new.php
 	$menu_name = $_POST['menu_name'] ?? '';
 	$position = $_POST['position'] ?? '';
 	$visible = $_POST['visible'] ?? '';
-	echo "<h2>Form parameters</h2>";
-	echo "Subject ID: " . $id . "<br>";
-	echo "Menu name: " . $menu_name . "<br>";
-	echo "Position: " . $position . "<br>";
-	echo "Visible: " . $visible . "<br>";
+	
+	$result = insert_subject($menu_name, $position, $visible);
+	$new_id = mysqli_insert_id($db);
+	redirect_to('/staff/subjects/show.php?id=' . $new_id);
+} else {
+	$subject_set = find_all_subjects();
+	$subject_count = mysqli_num_rows($subject_set) + 1;
+	$subject = [];
+	$subject['position'] = $subject_count;
+	mysqli_free_result($subject_set); 
 }
 ?>
 
@@ -27,9 +32,10 @@ if (is_post_request($_POST)) {
 		<div class="content-header">
 		  <a class="back-link" href="<?php echo url_for('/staff/subjects/index.php') ?>">&laquo; Back to List</a>
 		</div><!-- class="content-header" -->
+		
 		<div id="subject new">
 			<h1>Create Subjects</h1>
-			<form action="<?php echo url_for('/staff/subjects/new.php'); ?>" method="post">
+			<form action="<?php echo url_for('/staff/subjects/new.php'); ?>" method="POST">
 
 				<dl>
 					<dt>Menu Name</dt>
@@ -40,8 +46,8 @@ if (is_post_request($_POST)) {
 					<dt>Position</dt>
 					<dd>
 						<select name="position">
-							<?php for ($i=1; $i < 4; $i++) { ?>
-								<option value="<?php echo $i; ?> <?php if ($position == $i) { echo ' selected'; }?>"><?php echo $i; ?></option>
+							<?php for ($i = 1; $i <= $subject_count; $i++) { ?>
+								<option value="<?php echo $i; ?>"<?php if ($subject['position'] == $i) { echo " selected"; }?>><?php echo $i; ?></option> 
 							<?php } ?>
 						</select>
 					</dd>

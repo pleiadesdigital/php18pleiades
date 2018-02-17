@@ -102,28 +102,40 @@ body {
   font-family: "Encode Sans Condensed", sans-serif;
   background-color: #fafafa;
 }
+/* line 22, ../../sass/_main.scss */
+body .delete p {
+  margin: 1em 0px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+/* line 26, ../../sass/_main.scss */
+body .delete p.item {
+  font-weight: 500;
+  color: royalblue;
+  text-transform: uppercase;
+}
 
 /* HEADINGS */
-/* line 25, ../../sass/_main.scss */
+/* line 35, ../../sass/_main.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 400;
 }
 
-/* line 29, ../../sass/_main.scss */
+/* line 39, ../../sass/_main.scss */
 p, ul, ol, li, input, textarea, button {
   font-family: "Encode Sans Condensed", sans-serif;
 }
 
 /* SITE-WRAPPER */
-/* line 33, ../../sass/_main.scss */
+/* line 43, ../../sass/_main.scss */
 .site-wrapper {
   width: 1000px;
   margin: 0px auto;
 }
 
 /* HEADER */
-/* line 39, ../../sass/_main.scss */
+/* line 49, ../../sass/_main.scss */
 header {
   display: block;
   width: 100%;
@@ -140,17 +152,17 @@ header {
   /* SITE BRANDING */
   /* NAVIGATION */
 }
-/* line 53, ../../sass/_main.scss */
+/* line 63, ../../sass/_main.scss */
 header .site-branding {
   padding: 2em 1em;
 }
-/* line 55, ../../sass/_main.scss */
+/* line 65, ../../sass/_main.scss */
 header .site-branding h1 {
   margin: 0px;
   font-size: 20px;
   text-align: center;
 }
-/* line 64, ../../sass/_main.scss */
+/* line 74, ../../sass/_main.scss */
 header .main-nav {
   width: 100%;
   background-color: rgba(242, 242, 242, 0.3);
@@ -158,20 +170,20 @@ header .main-nav {
   padding: 1em;
   text-align: center;
 }
-/* line 70, ../../sass/_main.scss */
+/* line 80, ../../sass/_main.scss */
 header .main-nav ul {
   list-style: none;
   padding: 0px;
   margin: 0px;
 }
-/* line 74, ../../sass/_main.scss */
+/* line 84, ../../sass/_main.scss */
 header .main-nav ul li {
   display: inline;
   margin-right: 1em;
 }
 
 /* MAIN CONTENT */
-/* line 84, ../../sass/_main.scss */
+/* line 94, ../../sass/_main.scss */
 .main-content {
   display: block;
   width: 100%;
@@ -179,7 +191,7 @@ header .main-nav ul li {
   padding: 2em 30px;
   background-color: #FFFFFF;
 }
-/* line 90, ../../sass/_main.scss */
+/* line 100, ../../sass/_main.scss */
 .main-content h1 {
   margin: 1em 0px;
   font-size: 24px;
@@ -188,7 +200,7 @@ header .main-nav ul li {
 }
 
 /* FOOTER */
-/* line 101, ../../sass/_main.scss */
+/* line 111, ../../sass/_main.scss */
 footer {
   display: block;
   width: 100%;
