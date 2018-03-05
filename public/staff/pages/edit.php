@@ -1,34 +1,36 @@
-<?php require_once('../../../private/initialize.php'); ?>
-<?php
+<?php 
+
+require_once('../../../private/initialize.php');
 
 if (!isset($_GET['id'])) {
 	redirect_to('/staff/pages/index.php');
 }
 
-$id = $_GET['id'] ?? '1';
+$id = $_GET['id'];
 
 // check submit method
-if (is_post_request($_POST)) {
+if (is_post_request()) {
+
 	$page = [];
 	$page['id'] = $id;
-	$page['menu_name'] = $_POST['menu_name'];
 	$page['subject_id'] = $_POST['subject_id'];
+	$page['menu_name'] = $_POST['menu_name'];
 	$page['position'] = $_POST['position'];
 	$page['visible'] = $_POST['visible'];
 	$page['content'] = $_POST['content'];
 
 	$result = update_page($page);
-	redirect_to('/staff/pages/show.php?id=' . $id);
-
+	if ($result === true) {	
+		redirect_to('/staff/pages/show.php?id=' . $id);
+	} else {
+		$errors = $result;
+	}
 } else {
 	$page = find_page_by_id($id);
-
-	$page_set = find_all_pages();
-	$page_count = mysqli_num_rows($page_set);
-	mysqli_free_result($page_set);
-
-	$subject_set = find_all_subjects();
 }
+$page_set = find_all_pages();
+$page_count = mysqli_num_rows($page_set);
+mysqli_free_result($page_set);
 
 ?>
 
@@ -42,6 +44,9 @@ if (is_post_request($_POST)) {
 
 		<div id="page edit">
 			<h1>Edit Pages</h1>
+
+			<?php echo display_errors($errors); ?>
+
 			<form action="<?php echo url_for('/staff/pages/edit.php?id=' . h(u($id))); ?>" method="post">
 
 				<dl>
@@ -53,8 +58,9 @@ if (is_post_request($_POST)) {
 					<dt>Subject ID</dt>
 					<dd>
 						<select name="subject_id" id="subject_id">
+							<?php $subject_set = find_all_subjects(); ?>
 							<?php while ($subject = mysqli_fetch_array($subject_set)) { ?>
-								<option value="<?php echo $subject['id']; ?>"<?php if ($subject['id'] == $page['subject_id']) { echo "selected"; } ?>><?php echo $subject['id'] . ' | ' . $subject['menu_name']; ?></option>
+								<option value="<?php echo $subject['id']; ?>"<?php if ($page['subject_id'] == $subject['id']) { echo " selected"; } ?>><?php echo $subject['id'] . ' | ' . $subject['menu_name']; ?></option>
 							<?php } ?>
 						</select>				
 					</dd>
