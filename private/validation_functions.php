@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /* All functions test for true or false */
 
@@ -22,7 +22,7 @@ function has_length_greater_than($value, $min) {
 function has_length_less_than($value, $max) {
   $length = strlen($value);
   return $length < $max;
-} 
+}
 
 // has length exactly. 2 arguments
 function has_length_exactly($value, $exact) {
@@ -62,19 +62,19 @@ function has_string($value, $required_string) {
 function has_valid_email_format($value) {
   $email_regex = '/\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\Z/i';
   return preg_match($email_regex, $value) === 1;
-} 
+}
 
-// check if page name is unique 
+// check if page name is unique
  function has_unique_page_menu_name($menu_name, $current_id="0") {
   global $db;
 
   $sql = "SELECT * FROM pages ";
-  $sql .= "WHERE menu_name = '" . $menu_name . "' ";
-  $sql .= "AND id != '" . $current_id . "'";
+  $sql .= "WHERE menu_name = '" . db_escape($db, $menu_name) . "' ";
+  $sql .= "AND id != '" . db_escape($db, $current_id) . "'";
 
   $page_set = mysqli_query($db, $sql);
   $page_count = mysqli_num_rows($page_set);
   mysqli_free_result($page_set);
 
   return $page_count === 0; // returns false if finds one match
-} 
+}
