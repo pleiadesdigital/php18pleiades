@@ -14,7 +14,7 @@ function find_all_subjects() {
 function find_subject_by_id($id) {
   global $db;
   $sql = "SELECT * FROM subjects ";
-  $sql .= "WHERE id = '" . $id . "'";
+  $sql .= "WHERE id = '" . db_escape($db, $id) . "'";
   $result = mysqli_query($db, $sql);
   confirm_result_set($result);
   $subject = mysqli_fetch_assoc($result);
@@ -27,20 +27,20 @@ function insert_subject($subject) {
 
   $errors = validate_subject($subject);
   if (!empty($errors)) {
-    return $errors; 
+    return $errors;
   }
 
   $sql =  "INSERT INTO subjects ";
 	$sql .= "(menu_name, position, visible) ";
 	$sql .= "VALUES (";
-	$sql .= "'" . $subject['menu_name'] . "', ";
-	$sql .= "'" . $subject['position']. "', ";
-	$sql .= "'" . $subject['visible']. "'";
+	$sql .= "'" . db_escape($db, $subject['menu_name']) . "', ";
+	$sql .= "'" . db_escape($db, $subject['position']) . "', ";
+	$sql .= "'" . db_escape($db, $subject['visible']) . "'";
 	$sql .= ")";
 	$result = mysqli_query($db, $sql);
 	// For INSERT statements result is TRUE or FALSE
 	if ($result) {
-		return true; 
+		return true;
 	} else {
 		// INSERT failed
 		echo mysqli_error($db);
@@ -54,19 +54,19 @@ function update_subject($subject) {
 
   $errors = validate_subject($subject);
   if (!empty($errors)) {
-    return $errors; 
+    return $errors;
   }
 
   $sql = "UPDATE subjects SET ";
-  $sql .= "menu_name = '" . $subject['menu_name'] . "', ";
-  $sql .= "position = '" . $subject['position'] . "', ";
-  $sql .= "visible = '" . $subject['visible'] . "'  "; 
-  $sql .= "WHERE id = '" . $subject['id'] . "' ";
+  $sql .= "menu_name = '" . db_escape($db, $subject['menu_name']) . "', ";
+  $sql .= "position = '" . db_escape($db, $subject['position']) . "', ";
+  $sql .= "visible = '" . db_escape($db, $subject['visible']) . "'  ";
+  $sql .= "WHERE id = '" . db_escape($db, $subject['id']) . "' ";
   $sql .= "LIMIT 1";
   $result = mysqli_query($db, $sql);
   // For INSERT statements result is TRUE or FALSE
 	if ($result) {
-    return true;	
+    return true;
   } else {
 		// INSERT failed
 		echo mysqli_error($db);
@@ -78,7 +78,7 @@ function update_subject($subject) {
 function delete_subject($id) {
   global $db;
   $sql = "DELETE FROM subjects ";
-  $sql .= "WHERE id = '" . $id . "' ";
+  $sql .= "WHERE id = '" . db_escape($db, $id) . "' ";
   $sql .= "LIMIT 1";
   $result = mysqli_query($db, $sql);
   if ($result) {
@@ -145,7 +145,7 @@ function insert_page($page) {
 
 function update_page($page) {
   global $db;
-  
+
   $errors = validate_page($page);
   if (!empty($errors)) {
     return $errors;
@@ -204,8 +204,8 @@ function validate_subject($subject) {
   }
   if ($postion_int > 999) {
     $errors[] = "Position must be less than 999";
-  } 
-  //visible (ensure we are working with a string) 
+  }
+  //visible (ensure we are working with a string)
   $visible_str = (string) $subject['visible'];
   if (!has_inclusion_of($visible_str, ["0", "1"])) {
     $errors[] = "Visible must be true or false";
@@ -216,15 +216,15 @@ function validate_subject($subject) {
 function validate_page($page) {
   $errors = [];
 
-  // subject_id not blank 
+  // subject_id not blank
   if (is_blank($page['subject_id'])) {
     $errors[] = "Subject ID can't be blank";
-  } 
+  }
 
   //menu_name
   if (is_blank($page['menu_name'])) {
     $errors[] = "Name can't be blank.";
-  } elseif (!has_length($page['menu_name'], ['min' => 2, 'max' => 255])) {  
+  } elseif (!has_length($page['menu_name'], ['min' => 2, 'max' => 255])) {
     $errors[] = "Name must be between 2 and 255 characters.";
   }
   $current_id = $page['id'] ?? '0';
@@ -239,14 +239,14 @@ function validate_page($page) {
   }
   if ($postion_int > 999) {
     $errors[] = "Position must be less than 999.";
-  } 
+  }
 
-  //visible (ensure we are working with a string) 
+  //visible (ensure we are working with a string)
   $visible_str = (string) $page['visible'];
   if (!has_inclusion_of($visible_str, ["0", "1"])) {
     $errors[] = "Visible must be true or false";
   }
- 
+
   if (is_blank($page['content'])) {
     $errors[] = "Content can't be left behind.";
   }
