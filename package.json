@@ -1,30 +1,32 @@
 {
   "name": "pleiadesmoon",
   "version": "1.0.0",
-  "description": "PHP training 18",
+  "description": "PHP Training",
   "main": "index.php",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pleiadesdigital/php18pleiades.git"
   },
   "keywords": [
-    "php",
-    "cms"
+    "PHP",
+    "PostCSS",
+    "GULP"
   ],
   "author": "Ronaldo Ortiz",
   "license": "ISC",
-  "homepage": "https://github.com/pleiadesdigital/php18pleiades#readme",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "normalize.css": "^8.0.1"
+  },
   "devDependencies": {
+    "autoprefixer": "^9.3.1",
+    "browser-sync": "^2.26.3",
     "gulp": "^3.9.1",
-    "gulp-browserify": "^0.5.1",
-    "gulp-compass": "^2.1.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.0.0",
-    "gulp-if": "^2.0.2",
-    "gulp-livereload": "^3.8.1",
-    "gulp-sourcemaps": "^2.6.0",
-    "gulp-uglify": "^3.0.0",
-    "gulp-util": "^3.0.8",
-    "path": "^0.12.7"
+    "gulp-postcss": "^8.0.0",
+    "gulp-watch": "^5.0.1",
+    "postcss-import": "^12.0.1",
+    "postcss-mixins": "^6.2.0",
+    "postcss-nested": "^4.1.0",
+    "postcss-simple-vars": "^5.0.1"
   }
 }

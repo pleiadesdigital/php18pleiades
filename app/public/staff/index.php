@@ -2,7 +2,7 @@
 <!-- MAIN CONTENT -->
 <?php $page_title = 'Staff Menu'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
-	<section class="main-content">
+	<section class="main-content-staff">
 		<div id="main-menu">
 			<h2>Main Menu</h2>
 			<ul>

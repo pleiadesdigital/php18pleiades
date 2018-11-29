@@ -1,12 +1,12 @@
 /* STAFF Specifics */
 
-// Actions
+/* Actions */
 .actions {
   margin-bottom: 1em;
 }
 
-// Lists
-.list { //[table]
+/* Lists */
+.list {
   border-collapse: collapse;
   vertical-align: top;
   width: 100%;
@@ -16,13 +16,13 @@
       background: #0055DD;
       color: $white;
       text-align: center;
-    } //th
+    }
     td {
       border: 1px solid #999999;
       text-align: center;
-    } //td
-  } //tr
-} //.list [table]
+    }
+  }
+}
 
 /* Forms */
 form {
@@ -57,11 +57,26 @@ dt {
   ul {
     margin-bottom: 0px;
     padding-left: 1em;
-  } //ul
-} //.errors
+  }
+}
 
 
 /* MAIN CONTENT  */
+
+/* MAIN CONTENT */
+.main-content-staff {
+  display: block;
+  width: 100%;
+  min-height: 400px;
+  padding: 2em 30px;
+  background-color: $white;
+  h1 {
+    margin: 1em 0px;
+    font-size: 24px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+}
 .main-content {
   .page-metadata {
     display: inline-block;

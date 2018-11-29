@@ -1,0 +1,16 @@
+/*!
+Project: PHP Essential Training [CMS]
+Author: Ronaldo Ortiz
+*/
+
+
+/*--------------------------------------------------------------
+ALL STYLES
+--------------------------------------------------------------*/
+@import "normalize.css";
+@import "_mixins";
+@import "_main";
+@import "_staff";
+@import "_public";
+
+

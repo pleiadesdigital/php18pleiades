@@ -1,19 +1,14 @@
 html {
   height: 100%;
   width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
 body {
-  // height: 980px;
   width: 100%;
   margin: 0px;
   padding: 0px;
@@ -66,8 +61,8 @@ header {
       margin: 0px;
       font-size: 20px;
       text-align: center;
-    } //h1
-  } //.site-branding
+    }
+  }
 
 
   /* NAVIGATION */
@@ -76,7 +71,7 @@ header {
     background-color: rgba($snow, 0.3);
     margin: 0px;
     padding: 1em;
-    text-align: center;
+    text-align: right;
     ul {
       list-style: none;
       padding: 0px;
@@ -84,27 +79,24 @@ header {
       li {
         display: inline;
         margin-right: 1em;
-      } //li
-    } //ul
-  } //.main-nav
-
-} //HEADER
-
-/* MAIN CONTENT */
-.main-content {
-  display: block;
-  width: 100%;
-  min-height: 400px;
-  padding: 2em 30px;
-  background-color: $white;
-  h1 {
-    margin: 1em 0px;
-    font-size: 24px;
-    font-size: 1.5rem;
-    text-transform: uppercase;
+        a:link,
+        a:visited {
+          color: $lightsilver;
+          text-decoration: none;
+          border: 1px solid $lightsilver;
+          border-radius: 4px;
+          padding: 4px 10px;
+        }
+        a:hover,
+        a:focus {
+          background-color: $lightsilver;
+          color: $darkpurple;
+        }
+      }
+    }
   }
-}
 
+}
 
 
 /* FOOTER */
@@ -115,8 +107,7 @@ footer {
   background: $purple;
   padding: 10px 20px;
   color: $snow;
-
-} //footer
+}
 
 
 

@@ -1,0 +1,147 @@
+/* MAIN CONTENT  */
+
+/* MAIN CONTENT */
+.main-content-public {
+  display: block;
+  width: 100%;
+  min-height: 500px;
+  padding: 2em 0px;
+  background-color: $white;
+  h1 {
+    margin: 1em 0px;
+    font-size: 24px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+}
+
+.main-content-public {
+
+  .public-nav {
+    width: 28%;
+    float: left;
+    background-color: $pink;
+    a {
+      color: $snow;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+   ul.subjects {
+     margin-top: 20px;
+     margin-left: 20px;
+     padding: 0px;
+     list-style: none;
+     & > li {
+       margin-bottom: 1em;
+     }
+   }
+
+   ul.pages {
+     margin-left: 15px;
+     padding: 0px;
+     list-style: none;
+     font-weight: 300;
+   }
+
+   .selected > a {
+     font-weight: 600;
+     color: $red;
+   }
+
+   #hero-image {
+     float: left;
+     margin-bottom: 40px;
+     padding: 0px;
+     height: 200px;
+     width: 900px;
+   }
+
+  #page {
+    float: right;
+    width: 70%;
+    min-height: 450px;
+    padding-left: 0px;
+    vertical-align: top;
+    background: $snow;
+
+    h1 {
+      font-size: 16px;
+      color: $darkerblue;
+      line-height: normal;
+    }
+
+    h2 {
+      font-size: 14px;
+      color: $darkerblue;
+      line-height: normal;
+    }
+
+    h3 {
+      font-size: 14px;
+      color: $purple;
+    }
+
+    p {
+      color: $darkerblue;
+      padding: 0px;
+      line-height: normal;
+    }
+
+  }
+
+  #content {
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    p {
+      font-size: 16px;
+      line-height: normal;
+    }
+
+    li {
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    #disclaimer {
+      margin-left: 10px;
+      font-size: 14px;
+      line-height: normal;
+      clear: both;
+      padding: 1em;
+    }
+
+  }
+
+  #service-blocks {
+    margin-top: 50px;
+
+    .service {
+      float: left;
+      width: 250px;
+      margin-right: 40px;
+    }
+
+  }
+
+  a.learnmore {
+    color: $maroon;
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+  }
+
+}
+
+
+
